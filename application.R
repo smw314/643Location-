@@ -11,6 +11,5 @@ pitcher_summary <- final_pitches %>%
   group_by(player_name, team_name) %>% 
   summarise(n = n(),
             .pred = median(.pred),
-            location_plus = 100*(.pred/median_pred),
-            location_plus = ifelse(scaled > 0, 200-scaled, 200 + scaled)) %>% 
+            location_plus = 100*(.pred/median_pred)) %>% 
   filter(n > 249)
