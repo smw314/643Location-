@@ -33,7 +33,6 @@ balls <- c("BallCalled") #"BallIntentional", "BallinDirt")
 strikes_foul <- c("StrikeSwinging", "StrikeCalled", "FoulBall")
 strikes <- c("StrikeSwinging", "StrikeCalled")
 
-# is this just balls in play? or does it include walks and strikeouts?
 ml_data <- all_pitches %>% 
   mutate(woba = case_when(count == "0-0" ~ .379,
                           count == "0-1" ~ .315,
