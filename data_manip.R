@@ -49,8 +49,6 @@ ml_data <- all_pitches %>%
                           TRUE ~ 0),
          xwobacon_predictions = ifelse(xwobacon_predictions < 0, 0, 
                                        xwobacon_predictions), 
-         # would it be better to scale between 0 and ___
-         # current mothod might cluster too much around 0
          woba_diff = xwobacon_predictions - woba,
          bip_rv = woba_diff/1.28358,
          pitch_rv = case_when(count == "0-0" & (pitch_call == "BallCalled" | pitch_call == "BallIntentional" | pitch_call == "BallinDirt") ~ 0.0354904,
